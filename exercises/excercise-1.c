@@ -169,3 +169,105 @@ int main()
 }
 
 
+/*
+8.Write a C program to convert a given hexadecimal and octal number into a decimal 
+number.
+*/
+
+#include<stdio.h>
+#include<math.h>
+#include <string.h>
+int main()
+{
+ long oct, dec=0; 
+ int position=0, digit; 
+ 
+ printf("Enter an Octal Number :"); 
+ scanf("%ld", &oct); 
+ 
+ while(oct!=0) { 
+ digit = oct%10;
+ dec += digit*pow(8, position); 
+ 
+ position++; 
+ oct /= 10; 
+ } 
+ 
+ printf("Decimal Number : %ld\n", dec); 
+ 
+ long long dec2=0;
+ char hexDigits[16] = {'0', '1', '2', '3', '4', '5', '6', '7', '8',
+ '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+ char hex[30]; 
+ int i, j, power=0; 
+ 
+ printf("Enter a Hexadecimal Number :"); 
+ scanf("%s", hex); 
+ 
+ for(i=strlen(hex)-1; i >= 0; i--) {
+ 
+ for(j=0; j<16; j++){
+ if(hex[i] == hexDigits[j]){
+ dec2 += j*pow(16, power);
+ }
+ }
+ power++; 
+ }
+ printf("Decimal Number : %ld\n", dec2); 
+}
+
+
+/*
+9.Write a C program to calculate LCM and GCD of two numbers.
+*/
+
+#include <stdio.h>
+void main()
+{
+ int num1, num2, gcd, lcm, rem, num, deno;
+ printf("Enter the first number : ");
+ scanf("%d",&num1);
+ printf("Enter the second number : ");
+ scanf("%d",&num2);
+ if (num1 > num2)
+ {
+ num = num1;
+ deno = num2;
+ }
+ else
+ {
+ num = num2;
+ deno = num1;
+ }
+ rem = num % deno;
+ while (rem != 0)
+ {
+ num = deno;
+ deno = rem;
+ rem = num % deno;
+ }
+ gcd = deno;
+ lcm = num1 * num2 / gcd;
+ printf("GCD of %d and %d = %d\n", num1, num2, gcd);
+ printf("LCM of %d and %d = %d\n", num1, num2, lcm);
+}
+
+
+/*
+10.Write a C program to find the sum of the series:
+1/2 +2/3 +3/4+……+ n/(n+1)
+*/
+
+#include <stdio.h>
+void main()
+{
+ float f;
+ int n;
+ printf("Enter the number n : ");
+ scanf("%d",&n);
+ for (float i = 1; i <= n; i++)
+ {
+ f+=(i)/(i+1);
+ }
+ printf("The sum of the series is = %.2f",f);
+}
