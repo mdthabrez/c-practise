@@ -271,3 +271,33 @@ void main()
  }
  printf("The sum of the series is = %.2f",f);
 }
+
+
+/*
+11. Write a C program to accept the current date and date of birth of the user. Calculate the 
+age of the user and display it on the screen. Date should be displayed in DD/MM/YYYY 
+format.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+ int pdate,pmonth,pyear,bdate,bmonth,byear;
+ printf("Enter your birthday in DD/MM/YYYY format : ");
+ scanf(" %d/%d/%d",&bdate,&bmonth,&byear);
+ printf("Enter the present date in DD/MM/YYYY format : ");
+ scanf(" %d/%d/%d",&pdate,&pmonth,&pyear);
+ int month[] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+ if (bdate > pdate) {
+ pdate = pdate + month[bmonth - 1];
+ pmonth = pmonth - 1;
+ }
+ if (bmonth > pmonth) {
+ pyear = pyear - 1;
+ pmonth = pmonth + 12;
+ }
+ 
+ int final_year = pyear - byear;
+ printf("You are %d years old", final_year);
+ return 0;
+}
