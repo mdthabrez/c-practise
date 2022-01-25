@@ -32,3 +32,21 @@ printf("The number of upper case letters : %d\n",u);
 printf("The number of lower case letters : %d\n",l);
 printf("The number of digits : %d\n",d);
 }
+
+
+/*
+2. Write a C program to display the square and cube of first n natural numbers using do-while loop.
+*/
+#include<stdio.h>
+int main()
+{
+ int n,i=1;
+ printf("Enter number n : ");
+ scanf("%d",&n);
+ printf("squares\tcubes\n");
+ do
+ {
+ printf("%d\t%d\n",i*i,i*i*i);
+ i++;
+ } while (i<=n);
+}
