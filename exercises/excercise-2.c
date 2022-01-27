@@ -50,3 +50,18 @@ int main()
  i++;
  } while (i<=n);
 }
+
+
+/*
+3.Write a C program to enter a decimal number. Calculate and display the octal and 
+hexadecimal equivalent of this number.
+*/
+#include<stdio.h>
+int main()
+{
+ int n,i=1;
+ printf("Enter number n : ");
+ scanf("%d",&n);
+ printf("The number in octal is %o\n",n);
+ printf("The number in hexadecimal is %x\n",n);
+}
