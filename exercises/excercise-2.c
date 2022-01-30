@@ -65,3 +65,37 @@ int main()
  printf("The number in octal is %o\n",n);
  printf("The number in hexadecimal is %x\n",n);
 }
+
+
+/*
+4. Write a C program to generate calendar of a month given the start day of the week and the 
+number of days in that month.
+*/
+#include <stdio.h>
+int main()
+{
+ int days,s,i;
+ printf("Number of days in the month: ");
+ scanf("%d", &days);
+ printf("Codes of the first day of the month are \n ");
+ printf("Monday - 1\nTuesday - 2\nWednesday - 3\nThursday - 4\nFriday - 5\nSaturday - 6
+\nSunday - 7\n ");
+ printf("Enter the code of the first day of the month : ");
+ scanf("%d", &s);
+ printf("\nMon \tTue \tWed \tThu \tFri \tSat \tSun \n\n");
+ for(int j=s-1;j>0;j--)
+ {
+ printf("\t");
+ }
+ for (i = 1; i <= 8-s; i++)
+ {
+ printf("%d\t",i);
+ }
+ for (int j = 0 ; i <= days; i++,j++)
+ {
+ if(j%7==0)
+ printf("\n");
+ printf("%d\t",i);
+ }
+}
+
