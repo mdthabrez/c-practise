@@ -99,3 +99,22 @@ int main()
  }
 }
 
+
+/*
+5. Write a C program to sum the series 1/1 + 22/2 + 33/3 + ………
+*/
+#include<stdio.h>
+#include <math.h>
+int main()
+{
+ int n,i;
+ double sums = 0.0, res;
+ printf("Enter a number n : ");
+ scanf("%d",&n);
+ for (i = 1; i <= n; ++i) {
+ res = pow(i, i)/i;
+ sums += res;
+ }
+ printf("%.2f", sums);
+}
+
