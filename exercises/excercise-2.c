@@ -146,3 +146,70 @@ int main()
  printf("The largest of the four numbers is %d",max);
 }
 
+
+/*
+7. Write a C program to accept the marks in four subjects of 10 students belonging to a class. 
+Calculate the total, aggregate and grade of each student and display a suitable remark using 
+Switch case statement.
+*/
+#include<stdio.h>
+int main()
+{
+ int arr[10],n;
+ float sum=0,agg=0;
+ char grade;
+ printf("Enter the number of students : ");
+ scanf("%d",&n);
+ for (int i = 0; i < n; i++)
+ {
+ sum=0.0;
+ printf("Enter the 4 subject marks of student no.%d : ",i+1);
+ for (int j = 0; j < 4; j++)
+ {
+ scanf(" %d",&arr[j]);
+ sum += arr[j];
+ }
+ agg=sum/4;
+ if(agg>=90)
+ grade='O';
+ else if(agg>=80)
+ grade='A';
+ else if(agg>=70)
+ grade='B';
+ else if(agg>=60)
+ grade='C';
+ else if(agg>=33)
+ grade='D';
+ else
+ grade='F';
+ printf("Total : %.2f\n",sum);
+ printf("Aggregate : %.2f\n",agg);
+ printf("Grade : %c\n",grade);
+ printf("Remarks :");
+ switch (grade)
+ {
+ case 'O':
+ printf("Outstanding Performance");
+ break;
+ 
+ case 'A':
+ printf("Very Good Performance");
+ break;
+ 
+ case 'B':
+ printf("Good Performance");
+ break;
+ 
+ case 'C':
+ printf("Can do better");
+ break;
+ case 'D':
+ printf("Need to improve");
+ break;
+ case 'F':
+ printf("Failed");
+ break;
+ }
+ printf("\n");
+ }
+}
