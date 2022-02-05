@@ -213,3 +213,32 @@ int main()
  printf("\n");
  }
 }
+
+        
+/*
+8. Write a C program to accept various angles from the user and display its quadrant suitably.
+*/
+#include<stdio.h>
+int main()
+{
+ int n,arr[100];
+ printf("Enter the number of angles you want to input : ");
+ scanf("%d",&n);
+ for ( int i = 0;i<n; i++)
+ {
+ printf("Enter angle number %d : ",i+1);
+ scanf("%d",&arr[i]);
+ if( arr[i] > 0 && arr[i] <90)
+ printf("The angle %d lies in the First quandrant.\n",arr[i]);
+ else if( arr[i]< 180 && arr[i]> 90)
+ printf("The angle %d lies in the Second quandrant.\n",arr[i]);
+ else if( arr[i]< 270 && arr[i] > 180)
+ printf("The angle %d lies in the Third quandrant.\n",arr[i]);
+ else if( arr[i]> 270 && arr[i]< 360 )
+ printf("The angle %d lies in the Fourth quandrant.\n",arr[i]);
+ else if( arr[i]== 0 || arr[i]== 180 || arr[i]== 360)
+ printf("The angle %d lies on the X-axis.\n",arr[i]);
+ else if(arr[i]== 270 || arr[i]== 90)
+ printf("The angle %d lies on the Y-axis.\n",arr[i]);
+ }
+}
