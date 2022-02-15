@@ -242,3 +242,31 @@ int main()
  printf("The angle %d lies on the Y-axis.\n",arr[i]);
  }
 }
+
+        
+/*
+9. Write a C program that reads an array of 100 integers. Display all pairs of elements whose 
+sum is equal to 50.
+*/
+#include <stdio.h>
+void main()
+{
+ int arr[100],n;
+ printf("Enter the number of numbers you want to input : ");
+ scanf("%d",&n);
+ printf("Enter the numbers : \n");
+ for ( int i = 0; i<n ; i++)
+ {
+ scanf("%d",&arr[i]);
+ }
+ for (int i = 0; i < n - 1; i++)
+ {
+ for (int j = i + 1; j < n; j++)
+ {
+ if (arr[i] + arr[j] == 50)
+ {
+ printf("Pair found (%d, %d)\n", arr[i], arr[j]);
+ }
+ }
+ }
+}
