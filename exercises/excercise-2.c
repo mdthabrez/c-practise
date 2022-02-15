@@ -270,3 +270,35 @@ void main()
  }
  }
 }
+
+/*
+10. Write a C program to compute the sum, mean, variance and standard deviation of the 
+integers present in the array.
+*/
+#include <stdio.h>
+#include<math.h>
+void main()
+{
+ int arr[100],n; 
+ float sum = 0, mean = 0, sd = 0, vari = 0; 
+ printf("Enter the length of the array : ");
+ scanf("%d",&n);
+ printf("Enter the numbers of the array: \n");
+ for ( int i = 0; i<n ; i++)
+ {
+ scanf("%d",&arr[i]);
+ sum+=arr[i];
+ }
+ mean = sum / n; 
+ for ( int i = 0; i<n ; i++)
+ {
+ vari += pow((arr[i]-mean),2);
+ }
+ vari=vari/n;
+ sd = sqrt(vari);
+ printf("\nSum = %0.2f\n", sum);
+ printf("Mean = %0.2f\n", mean); 
+ printf("Variance = %0.2f\n", vari); 
+ printf("Standard Deviation = %0.2f\n", sd); 
+ return 0; 
+}
