@@ -92,3 +92,32 @@ int main() {
  }
  return (0);
 }
+
+/*
+4.Write a C program to arrange the value of the numbers in an array in such 
+a way that the odd numbers always precede the even numbers.
+*/
+#include <stdio.h>
+int main()
+{
+ int n,arr[100];
+ printf("Enter Array Size: ");
+ scanf("%d", &n);
+ printf("Enter Array Elements: ");
+ for(int i=0; i<n; i++)
+ {
+ scanf("%d", &arr[i]);
+ }
+ int j = -1;
+ for (int i = 0; i < n; i++) {
+ if (arr[i] % 2 != 0) {
+ j++;
+ int temp = arr[i];
+ arr[i] = arr[j];
+ arr[j] = temp;
+ }
+ }
+ printf("The new array is : ");
+ for(int i=0; i<n; i++)
+ printf("%d ", arr[i]);
+}
