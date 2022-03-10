@@ -121,3 +121,77 @@ int main()
  for(int i=0; i<n; i++)
  printf("%d ", arr[i]);
 }
+
+
+/*
+5.Write a C program to interchange the second largest and second smallest 
+element present in the array.
+*/
+#include <stdio.h>
+int main()
+{
+ int i,n,mini,maxi;
+ printf("Enter the number of elements:");
+ scanf("%d",&n);
+ printf("Enter the array elements :");
+ int a[n]; 
+ for(int i=0;i<n;i++)
+ scanf("%d",&a[i]);
+ if(n<2)
+ {printf("Invalid Input");}
+ else
+ {
+ int min = a[0];
+ int smin = a[1] ;
+ for( i = 0; i < n; i++) 
+ {
+ if(a[i] < min)
+ {
+ smin = min;
+ min = a[i];
+ }
+ }
+ for( i = 0; i < n; i++) 
+ {
+ if(a[i] < smin && a[i] != min)
+ {
+ smin = a[i];
+ }
+ }
+ int max = a[0];
+ int smax = a[1] ;
+ for( i = 0; i < n; i++) 
+ {
+ if(a[i] > max)
+ {
+ smax = max;
+ max = a[i];
+ }
+ }
+ for( i = 0; i < n; i++) 
+ {
+ if(a[i] > smax && a[i] != max)
+ {
+ smax = a[i];
+ }
+ }
+ for ( i = 0; i < n; i++)
+ {
+ if(a[i]==smin)
+ {
+ mini=i;
+ }
+ else if(a[i]==smax)
+ {
+ maxi=i;
+ }
+ }
+ int temp=a[mini];
+ a[mini] = a[maxi];
+ a[maxi] = temp;
+ printf("The array after interchange : ");
+ for( i=0; i<n; i++)
+ printf("%d ", a[i]);
+ }
+ return 0;
+}
