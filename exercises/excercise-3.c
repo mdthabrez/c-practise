@@ -221,3 +221,41 @@ printf("Sum of elements above the diagonal=%d\n",d1);
 printf("Sum of elements below the diagonal=%d",d2);
 return 0;
 }
+
+
+/*
+7.Write a C program to calculate XA+YB where A and B are matrices and X=2 
+and Y=3.
+*/
+#include <stdio.h>
+int main() {
+ int r, c, a[100][100], b[100][100], sum[100][100], i, j,x=2,y=3;
+ printf("Enter the number of rows : ");
+ scanf("%d", &r);
+ printf("Enter the number of columns : ");
+ scanf("%d", &c);
+ printf("Enter elements of 1st matrix:\n");
+ for (i = 0; i < r; ++i)
+ for (j = 0; j < c; ++j) {
+ scanf("%d", &a[i][j]);
+ }
+ printf("Enter elements of 2nd matrix:\n");
+ for (i = 0; i < r; ++i)
+ for (j = 0; j < c; ++j) {
+ scanf("%d", &b[i][j]);
+ }
+ for (i = 0; i < r; ++i)
+ for (j = 0; j < c; ++j) {
+ sum[i][j] = x*a[i][j] + y*b[i][j];
+ }
+ printf("The value of XA+YB is : \n");
+ for (i = 0; i < r; ++i)
+ for (j = 0; j < c; ++j) {
+ printf("%d ", sum[i][j]);
+ if (j == c - 1) {
+ printf("\n");
+ }
+ }
+ return 0;
+}
+
