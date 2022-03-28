@@ -286,3 +286,39 @@ int main()
  printf("%d isn't present in the array.\n", search);
  return 0;
 }
+
+/*
+9.Write a C program to delete a number in an array that is already in sorted 
+order.
+*/
+#include <stdio.h>
+int main()
+{
+ int i, n, j, num, arr [100]; 
+ printf("Enter Array Size: ");
+ scanf("%d", &n);
+ printf("Enter Array Elements: ");
+ for(int i=0; i<n; i++)
+ {
+ scanf("%d", &arr[i]);
+ }
+ printf("Enter the number to be deleted: ");
+ scanf("%d", &num);
+ for(i=0;i<n;i++)
+ {
+ if(arr[i]==num)
+ {
+ for(j=i;j<n;j++)
+ {
+ arr[j] = arr[j+1];
+ }
+ break;
+ }
+ }
+ printf("The array after deletion is:");
+ for(i=0;i<n-1;i++)
+ {
+ printf("%d ",arr[i]);
+ }
+}
+
